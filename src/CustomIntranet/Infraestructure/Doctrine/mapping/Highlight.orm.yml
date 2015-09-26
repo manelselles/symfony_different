@@ -1,0 +1,12 @@
+CustomIntranet\Domain\Model\Highlight:
+  type: entity
+  table: highlight
+  repositoryClass: CustomIntranet\Infraestructure\Doctrine\DoctrineHighlightRepository
+  fields:
+    id:
+      id: true
+      type: string
+    title:
+      type: string
+    description:
+      type: string

@@ -1,0 +1,18 @@
+default:
+    suites:
+        #domain:
+            #contexts: [ BasketContext ]
+        web:
+            contexts:
+                - WebContext:
+                    highlightRepository: "@highlight_repository"
+
+            filters:  { tags: 'critical' }
+
+    extensions:
+        Behat\Symfony2Extension: ~
+        Behat\MinkExtension:
+            base_url: 'http://localhost:8000'
+            sessions:
+                default:
+                    goutte: ~

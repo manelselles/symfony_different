@@ -1,0 +1,4 @@
+app:
+    #resource: "@AppBundle/Controller/"
+    resource: "CustomIntranet\Infraestructure\Ui\HomeController"
+    type:     annotation
