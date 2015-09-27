@@ -1,12 +1,12 @@
 default:
     suites:
-        #domain:
-            #contexts: [ BasketContext ]
+        domain:
+            contexts: [ CartContext ]
+            filters:  { tags: 'cart' }
         web:
             contexts:
                 - WebContext:
                     highlightRepository: "@highlight_repository"
-
             filters:  { tags: 'critical' }
 
     extensions:
