@@ -19,4 +19,9 @@ class DoctrineHighlightRepository extends EntityRepository implements HighlightR
         return $this->findAll();
     }
 
+    public function removeAll()
+    {
+        $this->_em->createQuery('DELETE CustomIntranet:HighLight h')->execute();
+    }
+
 }

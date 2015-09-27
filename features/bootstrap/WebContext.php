@@ -5,9 +5,10 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\RawMinkContext;
 use CustomIntranet\Domain\Model\Highlight;
 use CustomIntranet\Domain\Model\HighlightRepository;
+use Behat\Behat\Hook\Scope\AfterScenarioScope;
 
 
-    /**
+/**
  * Defines application features from the specific context.
  */
 class WebContext extends RawMinkContext implements Context, SnippetAcceptingContext
@@ -43,5 +44,13 @@ class WebContext extends RawMinkContext implements Context, SnippetAcceptingCont
     public function iShouldSeeTheHighlightTitle($title)
     {
         $this->assertSession()->pageTextContains($title);
+    }
+
+    /**
+     * @AfterScenario
+     */
+    public function cleanDB(AfterScenarioScope $scope)
+    {
+        $this->highlightRepository->removeAll();
     }
 }

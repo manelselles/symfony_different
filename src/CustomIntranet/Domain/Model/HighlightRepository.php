@@ -10,4 +10,6 @@ interface HighlightRepository
      * @return Highlight[]
      */
     public function getAll();
+
+    public function removeAll();
 }

@@ -32,4 +32,7 @@ class InMemoryHighlightRepository implements HighlightRepository
         return $this->items;
     }
 
+    public function removeAll()
+    {}
+
 }
